@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MonitoringScreen">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+
+
+        <Button
+            android:id="@+id/btnClearInput"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:text="Clear Input" />
+        <Button
+            android:id="@+id/bpm"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:text="Bpm Chart" />
+        <Button
+            android:id="@+id/spo2"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:text="Spo2 Chart" />
+        <Button
+        android:id="@+id/temp"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="5"
+        android:text="Temp. Chart" />
+
+        <Button
+            android:id="@+id/acc"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:text="Acc. Chart" />
+
+        <Button
+            android:id="@+id/table"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:text="Table" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/chkScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:checked="true"
+            android:text="Scroll" />
+
+        <CheckBox
+            android:id="@+id/chkReceiveText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Read" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:visibility="gone"
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+        <com.github.mikephil.charting.charts.LineChart
+            android:visibility="gone"
+            android:id="@+id/chart1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:visibility="gone"
+            android:id="@+id/chart2"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <ScrollView
+        android:id="@+id/viewScrollAcc1"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <com.github.mikephil.charting.charts.LineChart
+
+                    android:id="@+id/acc1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/acc2"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/acc3"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+        <ScrollView
+            android:id="@+id/viewScroll"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+            <TextView
+                android:id="@+id/txtReceive"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="#eeeeee"
+                android:typeface="monospace"
+                android:hint="Message shows up here ..."
+                android:scrollbars="vertical"
+                android:layout_marginTop="20dp"/>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
